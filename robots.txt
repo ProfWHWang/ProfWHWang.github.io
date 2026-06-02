@@ -1,0 +1,8 @@
+# This CV is intentionally NOT indexed by search engines, matching the
+# noindex/nofollow meta tags in index.html.
+#
+# To make the site discoverable on Google etc.:
+#   1) remove the robots/googlebot/bingbot meta tags in index.html, and
+#   2) replace the "Disallow: /" line below with "Disallow:" (empty).
+User-agent: *
+Disallow: /
