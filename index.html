@@ -1138,7 +1138,8 @@ footer.foot {
     padding: 140px 0 70px;
   }
 }
-@media (max-width: 760px) {
+@media (max-width: 1120px) {
+
   .nav-toggle {
     display: flex;
   }
@@ -1191,6 +1192,9 @@ footer.foot {
     padding: 14px;
     border-bottom: none;
   }
+}
+
+@media (max-width: 760px) {
   .portrait-wrap {
     width: min(235px, 60vw);
   }
@@ -1560,7 +1564,7 @@ footer.foot {
       </div>
       <div class="pub">
         <span class="ptitle">AI-assisted diagnostic system for pediatric developmental-dysplasia-of-the-hip screening</span>
-        <div class="meta">NSTC &middot; College Student Research</div>
+        <div class="meta">National Science &amp; Technology Council (NSTC) &middot; College Student Research</div>
         <div class="pub-foot"><span class="if-badge">2025 – 2026</span></div>
       </div>
       <div class="pub">
@@ -1570,7 +1574,7 @@ footer.foot {
       </div>
       <div class="pub">
         <span class="ptitle">Public-science outreach: health-science education for rural and indigenous communities</span>
-        <div class="meta">NSTC &middot; Public Science Education</div>
+        <div class="meta">National Science &amp; Technology Council (NSTC) &middot; Public Science Education</div>
         <div class="pub-foot"><span class="if-badge">2024 – 2025</span></div>
       </div>
       <div class="pub">
@@ -1585,7 +1589,7 @@ footer.foot {
       </div>
       <div class="pub">
         <span class="ptitle">Clubbed-finger detection for smokers using Mask R-CNN and KeypointNet</span>
-        <div class="meta">NSTC &middot; College Student Research</div>
+        <div class="meta">National Science &amp; Technology Council (NSTC) &middot; College Student Research</div>
         <div class="pub-foot"><span class="if-badge">2024 – 2025</span></div>
       </div>
       <div class="pub">
@@ -1968,7 +1972,7 @@ footer.foot {
       <div class="tl-item">
         <div class="tl-top">
           <div class="tl-title">Medical Review Expert</div>
-          <div class="tl-date">2023 – 2025</div>
+          <div class="tl-date">2023 – Present</div>
         </div>
         <div class="tl-org">Taiwan Hospital Association</div>
       </div>
@@ -2050,7 +2054,7 @@ document.addEventListener('click', (e) => {
   if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !navToggle.contains(e.target)) setMenu(false);
 });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
-window.addEventListener('resize', () => { if (window.innerWidth > 760) setMenu(false); });
+window.addEventListener('resize', () => { if (window.innerWidth > 1120) setMenu(false); });
 
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
