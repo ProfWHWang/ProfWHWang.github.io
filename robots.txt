@@ -1,8 +1,163 @@
-# This CV is intentionally NOT indexed by search engines, matching the
-# noindex/nofollow meta tags in index.html.
+# robots.txt — block search indexing & AI use of this site; permit ONLY link-preview bots.
 #
-# To make the site discoverable on Google etc.:
-#   1) remove the robots/googlebot/bingbot meta tags in index.html, and
-#   2) replace the "Disallow: /" line below with "Disallow:" (empty).
+# Robots Exclusion standard (RFC 9309). Compliant bots honor this file; it is a REQUEST,
+# not a firewall — a non-compliant scraper can ignore it. The profile photo (og-image.*)
+# lives at a public URL: this file asks search engines + AI crawlers NOT to take it, and
+# asks social/chat link-preview unfurlers TO fetch it so shared links show the photo.
+#
+# Note: link previews on Meta apps, X/Twitter, LinkedIn, Discord and Slack only work if
+# their unfurler is allowed below — those bots obey robots.txt, and a blanket Disallow
+# (even with a single image Allow) blocks the preview because they must read the page
+# HTML first. Telegram / iMessage / Signal preview regardless of this file.
+#
+# For a hard "do not index this image" guarantee you would also serve og-image with an
+# "X-Robots-Tag: noindex" response header (honored by Google AND facebookexternalhit).
+# GitHub Pages cannot set headers; that needs a proxy/CDN (e.g. Cloudflare) in front, or
+# a host with a _headers file (Cloudflare Pages / Netlify).
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LINK-PREVIEW / UNFURL BOTS — ALLOWED (this is what shows your photo when you
+# share the URL in chats/social). They fetch on demand to build a preview card;
+# they are NOT the search/AI indexers, which are blocked further down. Allowing
+# the whole site lets them read the page's Open Graph tags and fetch og-image in
+# ANY format — png, jpg, or webp (so a future format switch is already cleared).
+# ─────────────────────────────────────────────────────────────────────────────
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot-LinkExpanding
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SEARCH ENGINES — BLOCKED (no page or image indexing)
+# ─────────────────────────────────────────────────────────────────────────────
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Googlebot-Image
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Bingbot
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: Applebot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+# ─────────────────────────────────────────────────────────────────────────────
+# AI / LLM CRAWLERS (training, search, user-triggered retrieval) — BLOCKED
+# Note: FacebookBot / meta-externalagent are Meta's CRAWLERS (blocked); they are
+# distinct from facebookexternalhit, the link-preview bot allowed above.
+# ─────────────────────────────────────────────────────────────────────────────
+User-agent: GPTBot
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Claude-User
+Disallow: /
+
+User-agent: Claude-SearchBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Perplexity-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: Meta-ExternalFetcher
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Google-CloudVertexBot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+# ─────────────────────────────────────────────────────────────────────────────
+# EVERYONE ELSE — BLOCKED
+# ─────────────────────────────────────────────────────────────────────────────
 User-agent: *
 Disallow: /
