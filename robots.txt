@@ -1,27 +1,3 @@
-# robots.txt — block search indexing & AI use of this site; permit ONLY link-preview bots.
-#
-# Robots Exclusion standard (RFC 9309). Compliant bots honor this file; it is a REQUEST,
-# not a firewall — a non-compliant scraper can ignore it. The profile photo (og-image.*)
-# lives at a public URL: this file asks search engines + AI crawlers NOT to take it, and
-# asks social/chat link-preview unfurlers TO fetch it so shared links show the photo.
-#
-# Note: link previews on Meta apps, X/Twitter, LinkedIn, Discord and Slack only work if
-# their unfurler is allowed below — those bots obey robots.txt, and a blanket Disallow
-# (even with a single image Allow) blocks the preview because they must read the page
-# HTML first. Telegram / iMessage / Signal preview regardless of this file.
-#
-# For a hard "do not index this image" guarantee you would also serve og-image with an
-# "X-Robots-Tag: noindex" response header (honored by Google AND facebookexternalhit).
-# GitHub Pages cannot set headers; that needs a proxy/CDN (e.g. Cloudflare) in front, or
-# a host with a _headers file (Cloudflare Pages / Netlify).
-
-# ─────────────────────────────────────────────────────────────────────────────
-# LINK-PREVIEW / UNFURL BOTS — ALLOWED (this is what shows your photo when you
-# share the URL in chats/social). They fetch on demand to build a preview card;
-# they are NOT the search/AI indexers, which are blocked further down. Allowing
-# the whole site lets them read the page's Open Graph tags and fetch og-image in
-# ANY format — png, jpg, or webp (so a future format switch is already cleared).
-# ─────────────────────────────────────────────────────────────────────────────
 User-agent: facebookexternalhit
 Allow: /
 
