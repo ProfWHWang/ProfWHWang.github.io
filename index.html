@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+<!--
+  ============================================================================
+  Wei-Hsun Wang (王偉勛) — Curriculum Vitae · single-page website
+  ============================================================================
+  Self-contained static page. No build step and nothing to install; the only
+  external request is the Google Fonts stylesheet.
+
+  HOW TO EDIT
+    - Colours / theme : CSS custom properties in  :root  (top of <style>);
+                        this site's accent is deep teal with a bronze highlight.
+    - Profile photo   : the base64 data URI in the hero  .portrait img.
+    - Favicon         : icon.svg (a motorcycle emblem) + the inline data-URI below.
+    - Text content    : open the matching <section> (find it by its comment).
+
+  DEPLOY
+    Upload index.html and icon.svg to any static host (e.g. GitHub Pages).
+  ============================================================================
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -105,9 +123,7 @@
 [data-theme="dark"] header.nav.menu-open {
   background: rgba(11, 22, 17, 0.95);
 }
-[data-theme="dark"] nav.links {
-  background: rgba(11, 22, 17, 0.98);
-}
+
 [data-theme="dark"] .brand .mono {
   background: linear-gradient(135deg, #007a40, #064d2a);
 }
@@ -149,7 +165,6 @@
 [data-theme="dark"] nav.links .menu-email {
   background: #064d2a;
 }
-
 
 * {
   margin: 0;
@@ -1173,6 +1188,9 @@ footer.foot {
     border-radius: 999px;
     padding: 14px;
     border-bottom: none;
+  }
+  [data-theme="dark"] nav.links {
+    background: rgba(11, 22, 17, 0.98);
   }
 }
 
